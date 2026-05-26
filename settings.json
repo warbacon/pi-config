@@ -1,0 +1,21 @@
+{
+  "lastChangelogVersion": "0.75.5",
+  "enabledModels": [
+    "lmstudio/google/gemma-4-e4b",
+    "github-copilot/gpt-5.4-mini",
+    "github-copilot/gemini-3.1-pro-preview"
+  ],
+  "defaultProvider": "github-copilot",
+  "defaultModel": "gpt-5.4-mini",
+  "defaultThinkingLevel": "high",
+  "theme": "pino",
+  "collapseChangelog": true,
+  "packages": [
+    "npm:pi-ask-user",
+    "npm:pi-web-access"
+  ],
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "enableInstallTelemetry": false
+}
