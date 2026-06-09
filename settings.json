@@ -1,13 +1,13 @@
 {
-  "lastChangelogVersion": "0.75.5",
+  "lastChangelogVersion": "0.79.1",
   "enabledModels": [
-    "lmstudio/google/gemma-4-e4b",
     "github-copilot/gpt-5.4-mini",
+    "lmstudio/qwen/qwen3.5-9b",
     "github-copilot/gemini-3.1-pro-preview"
   ],
   "defaultProvider": "github-copilot",
   "defaultModel": "gpt-5.4-mini",
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "medium",
   "theme": "pino",
   "collapseChangelog": true,
   "packages": [
