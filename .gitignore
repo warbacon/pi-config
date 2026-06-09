@@ -2,3 +2,4 @@ auth.json
 pi-debug.log
 sessions/
 npm/
+trust.json
