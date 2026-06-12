@@ -1,12 +1,12 @@
 {
   "lastChangelogVersion": "0.79.1",
   "enabledModels": [
+    "llama-cpp/Qwen3.6-35B",
     "github-copilot/gpt-5.4-mini",
-    "lmstudio/qwen/qwen3.5-9b",
     "github-copilot/gemini-3.1-pro-preview"
   ],
-  "defaultProvider": "github-copilot",
-  "defaultModel": "gpt-5.4-mini",
+  "defaultProvider": "llama-cpp",
+  "defaultModel": "Qwen3.6-35B",
   "defaultThinkingLevel": "medium",
   "theme": "pino",
   "collapseChangelog": true,
