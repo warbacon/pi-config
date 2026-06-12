@@ -7,7 +7,6 @@
       "models": [
         {
           "id": "qwen3.6-35b",
-          "reasoning": true,
           "contextWindow": 131072,
           "input": ["text"]
         }
