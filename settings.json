@@ -1,19 +1,16 @@
 {
-  "lastChangelogVersion": "0.79.2",
+  "lastChangelogVersion": "0.79.3",
   "enabledModels": [
     "llama-cpp/Qwen3.6-35B",
     "github-copilot/gpt-5.4-mini",
     "github-copilot/gemini-3.1-pro-preview"
   ],
   "defaultProvider": "llama-cpp",
-  "defaultModel": "Qwen3.6-35B",
+  "defaultModel": "qwen3.6-35b",
   "defaultThinkingLevel": "medium",
   "theme": "pino",
   "collapseChangelog": true,
-  "packages": [
-    "npm:pi-ask-user",
-    "npm:pi-web-access"
-  ],
+  "packages": ["npm:pi-ask-user", "npm:pi-web-access"],
   "terminal": {
     "showTerminalProgress": true
   },
