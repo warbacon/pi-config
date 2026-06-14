@@ -2,9 +2,8 @@ import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { truncateToWidth, visibleWidth } from "@earendil-works/pi-tui";
 
 function formatPath(cwd: string): { dir: string; name: string } {
-  const home = process.platform === "win32"
-    ? process.env.USERPROFILE
-    : process.env.HOME;
+  const home =
+    process.platform === "win32" ? process.env.USERPROFILE : process.env.HOME;
   cwd = cwd.replace(home || "", "~");
   const isWindows = process.platform === "win32";
   const sep = isWindows ? "\\" : "/";
@@ -19,7 +18,7 @@ function formatPath(cwd: string): { dir: string; name: string } {
 function formatTokens(tokens: number | null): string {
   if (tokens === null) return "?";
   if (tokens >= 1_000_000) return `${(tokens / 1_000_000).toFixed(1)}M`;
-  if (tokens >= 1000) return `${Math.trunc(tokens / 1000).toFixed(1)}k`;
+  if (tokens >= 1000) return `${Math.trunc(tokens / 1000).toFixed(1)}K`;
   return `${tokens}`;
 }
 
@@ -31,7 +30,7 @@ function formatUsage(usage: {
   const used = formatTokens(usage.tokens);
   const total = formatTokens(usage.contextWindow);
   const pct = usage.percent !== null ? `${Math.round(usage.percent)}%` : "";
-  return pct ? `(${pct}) ${used}/${total}` : `${used}/${total}`;
+  return pct ? `${used}/${total} (${pct})` : `${used}/${total}`;
 }
 
 export default function (pi: ExtensionAPI) {
@@ -72,7 +71,11 @@ export default function (pi: ExtensionAPI) {
               )
             : "";
 
-          const modelComponent = `${theme.fg("muted", `${currentModelProvider}/`)}${theme.fg("accent", currentModelId)}`;
+          const providerComponent = theme.fg(
+            "dim",
+            `(${currentModelProvider})`,
+          );
+          const modelComponent = theme.fg("accent", currentModelId);
 
           const contextUsage = ctx.getContextUsage();
           const usageComponent =
@@ -80,7 +83,7 @@ export default function (pi: ExtensionAPI) {
 
           const left = [cwdComponent, branchComponent].join(" ");
           const center = usageComponent;
-          const right = modelComponent;
+          const right = [providerComponent, modelComponent].join(" ");
           const leftWidth = visibleWidth(left);
           const centerWidth = visibleWidth(center || "");
           const rightWidth = visibleWidth(right);
