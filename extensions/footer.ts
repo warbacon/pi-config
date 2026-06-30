@@ -18,7 +18,7 @@ function formatPath(cwd: string): { dir: string; name: string } {
 function formatTokens(tokens: number | null): string {
   if (tokens === null) return "?";
   if (tokens >= 1_000_000) return `${(tokens / 1_000_000).toFixed(1)}M`;
-  if (tokens >= 1000) return `${Math.trunc(tokens / 1000).toFixed(1)}K`;
+  if (tokens >= 1_000) return `${Math.trunc(tokens / 1_000).toFixed(1)}K`;
   return `${tokens}`;
 }
 
