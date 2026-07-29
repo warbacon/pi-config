@@ -1,6 +1,6 @@
 {
   "providers": {
-    "llama-cpp": {
+    "llama-server": {
       "baseUrl": "http://localhost:8081/v1",
       "api": "openai-completions",
       "apiKey": "none",
